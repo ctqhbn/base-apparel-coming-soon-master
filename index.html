@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    .attribution { font-size: 11px; text-align: left;
+      position: absolute;
+      bottom: 0;
+    }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      font-size: 16px;
+      font-family: 'Josefin Sans', sans-serif;    
+    }
+    body{
+      width:100vw;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      background-image: url("images/bg-pattern-desktop.svg");
+    }
+    .container{
+      display: flex;
+    }
+    .left_content{
+      margin-left: 10vw ;
+      margin-top: 10vh;
+      width: 30vw;
+    }
+    .header{
+      margin-top: 15vh;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      line-height: normal;
+    }
+    .header1{
+      font-size: 72px;
+      font-weight: 300;
+      color: hsl(0, 36%, 70%);
+    }
+    .header2{
+      font-size: 64px;
+      font-weight: 400;
+      color:  hsl(0, 6%, 24%);
+    }
+    .description{
+      margin-top: 28px;
+      font-size: 16px;
+      font-weight: 400;
+      color:  hsl(0, 36%, 70%);
+      line-height: 1.7;
+    }
+    .email{
+      margin-top: 36px;
+      height: 48px;
+      display: flex;
+      position: relative;
+    }
+    .container_email{
+      width: 90%;
+      height: 100%;
+      border: 2px solid hsl(0, 69%, 91%);
+      border-radius: 25px;
+      display: flex;    
+    }
+    .input_email{
+      outline: none;
+      border: none;
+      height: calc(100% - 2px);
+      width: 67%;
+      margin-left: 10%;
+      font-size:16px;
+      line-height: 28px;
+    }
+    .input_email::placeholder{
+      color:  hsl(0, 40%, 91%);
+    }
+    .input_email:focus{
+      outline: none;
+    }
+    .input_email:focus::placeholder{
+      color: transparent;
+    }
+    .validate_err{
+      display: none;
+      width: 24px;
+      height: 24px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .submit{
+      width: 20%;
+      height: calc(100% + 4px);
+      position: absolute;
+      right: 0;
+      border-radius:25px ;
+      border:none;
+      background: linear-gradient(135deg,hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      cursor: pointer;
+      box-shadow: 0px 10px 5px hsl(0, 18%, 93%), 5px 5px 5px hsl(0, 18%, 93%),5px 5px 5px hsl(0, 18%, 93%);
+      /* background: linear-gradient(135deg,hsl(0, 0%, 100%), hsl(0, 100%, 98%) ); */
+    }
+    .submit:hover{
+      background: hsl(0, 53%, 84%); 
+    }
+    .right_content{
+      position: absolute;
+      right: 0;
+      height: 100%;
+    }
+    .right_content img{
+      height: 100vh;
+    }
+    .main_bg{
+      display: none;
+    }
+    @media only screen and (max-width: 375px) {
+      .right_content{
+        display: none;
+      }
+      .main_bg{
+        display: block;
+        margin-left: -10vw;
+        margin-top: 28px;
+      }
+      .left_content{
+        width:80vw;
+        margin-top: 28px;
+      }
+      .logo img{
+        width: 108px;
+      }
+      .header{
+        text-align: center;
+        margin-top: 7vh;
+      }
+      .header1, .header2{
+        font-size: 44px;
+      }
+      .description{
+        text-align: center;
+        font-size: 14px;
+        margin-top: 12px;
+      }
+      .email{
+        margin-top: 32px;
+      }
+      footer{
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left_content">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="">
+      </div>
+      <div class="main_bg">
+        <img src="./images/hero-mobile.jpg" alt="">
+      </div>
+      <div class="header">
+        <span class="header1">We're<br></span>
+        <span class="header2">
+          coming<br> 
+          soon</span>
+      </div>
+      <div class="description">
+        Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </div>
+      <div class="email">
+        <div class="container_email">
+          <input class="input_email" type="text" placeholder="Email Address">
+          <img class="validate_err" src="./images/icon-error.svg" alt="">
+        </div>
+        <button class="submit">
+          <img src="./images/icon-arrow.svg" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="right_content">
+      <img src="./images/hero-desktop.jpg" alt="">
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/ctqhbn" target="_blank">Ha Ngoc Sang</a>.
+    </p>
+  </footer>
+  <script>
+    $( ".submit" ).click(function() {
+        let input = $(".input_email").val();
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!mailformat.test(input) )
+        {
+          $( ".validate_err" ).css({"display":"block"})
+          $( ".container_email" ).css({"border":"2px solid hsl(0, 62%, 56%)"})
+          $( ".input_email:focus::placeholder" ).css({"color":"transparent"})
+        }
+    });
+
+    $( ".input_email" ).on('focus', function() {
+      $( ".validate_err" ).css({"display":"none"})
+      $( ".container_email" ).css({"border":"2px solid hsl(0, 69%, 91%)"})
+
+    });
+    $( ".input_email" ).on('blur', function() {
+      $( ".container_email" ).css({"border":"2px solid hsl(0, 69%, 91%)"})
+    });
+  </script>
+</body>
+</html>
